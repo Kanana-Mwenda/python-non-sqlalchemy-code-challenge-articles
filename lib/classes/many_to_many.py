@@ -6,15 +6,15 @@ class Article:
         self.magazine = magazine
         self.title = title
 
-        #store all articles
+        #store all article instances
         Article.all.append(self)
 
         #establish relationship
         self.magazine._authors.append(self.author) #store the authors
-        self.magazine._articles.append(self) #magazine articles
+        self.magazine._articles.append(self) #add article to magazine articles
 
-        self.author._magazines.append(self.magazine) #store no of magazines written
-        self.author._articles.append(self)
+        self.author._magazines.append(self.magazine) #store magazines written
+        self.author._articles.append(self) #add articles to author articles
 
     #Article property title
     @property
